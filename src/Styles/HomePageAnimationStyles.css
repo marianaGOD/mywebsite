@@ -1,0 +1,47 @@
+/* Styles for the homepage animation container */
+.homepageanimation-container {
+  display: flex;
+  flex-direction: column;  /* Stack children vertically */
+  justify-content: center; /* Center children vertically in the container */
+  align-items: center;     /* Center children horizontally in the container */
+  height: 100vh;           /* Make the container full height of the viewport */
+  width: 100vw;            /* Make the container full width of the viewport */
+  position: relative;      /* Positioning context for absolutely positioned children */
+  background-color: #fbe1aa;
+}
+
+
+.homepageanimation-pic {
+  width: 45%; 
+  height: auto; 
+  cursor: pointer; 
+  transition: transform 0.3s; 
+  animation: zoomIn 3s ease-out forwards; /* Animation to zoom in the image */
+  position: absolute;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.1); /* Start from half the size */
+  }
+  to {
+    transform: scale(1); /* Scale up to the actual size */
+  }
+}
+
+.homepageanimation-pic2 {
+  width: 45%; /* Set a specific width for the image */
+  height: auto; /* Maintain aspect ratio */
+  cursor: pointer; /* Indicates clickable items */
+  position: absolute;
+}
+
+.speechbub1-pic, .speechbub2-pic {
+  position: absolute; 
+  max-width: 40%;   
+  display: none;     
+  right: 15%;
+  top: 5%;
+}
+
+
