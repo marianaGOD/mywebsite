@@ -36,7 +36,7 @@ export default function HomePageAnimation() {
           src={speechbub1pic}
           alt="First Speech Bubble"
           className="speechbub1-pic"
-          style={{ display: "block" }}
+          style={{ display: "block", opacity: "0.9" }}
         />
       )}
       {showBubble === 2 && (
@@ -44,7 +44,7 @@ export default function HomePageAnimation() {
           src={speechbub2pic}
           alt="Second Speech Bubble"
           className="speechbub2-pic"
-          style={{ display: "block" }}
+          style={{ display: "block", opacity: "0.9" }}
         />
       )}
       {showBubble === 3 && (

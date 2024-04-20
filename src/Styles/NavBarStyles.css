@@ -19,8 +19,7 @@
 
 .menu-links {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content:flex-end;
   width: 100%; /* Occupies the remaining space */
 }
 

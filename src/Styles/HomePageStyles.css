@@ -1,5 +1,21 @@
 .homepage-container {
-background-color:#fbe1aa ;
-height: 100%;
-width: 100%;
+  position: fixed;
+  background-color: #fbe1aa;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  display: flex; /* Enables the use of flexbox properties */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
+
+}
+
+.homepage-title-container {
+  display: flex; /* Enables the use of flexbox properties */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
+  height: 100%; /* Take up all available space */
+  width: 100%; /* Take up all available space */
+  text-align: center; /* Center text inside this container */
 }

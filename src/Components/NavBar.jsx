@@ -1,6 +1,7 @@
 import React from "react";
 import "../Styles/NavBarStyles.css"; 
 import pfpgif from "../assets/pfpgif.gif";
+import { Link} from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -11,7 +12,7 @@ const NavBar = () => {
       </div>
       <div className="menu">
         <div className="menu-links">
-          <a href="#" className="menu__link menu__link--active">
+          <Link to="/homepage" className="menu__link">
             Home
             <svg
               version="1.1"
@@ -22,9 +23,9 @@ const NavBar = () => {
             >
               <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4" />
             </svg>
-          </a>
-          <a href="#" className="menu__link">
-            About
+          </Link>
+          <Link to="/about" className="menu__link">
+            about me
             <svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -34,9 +35,9 @@ const NavBar = () => {
             >
               <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4" />
             </svg>
-          </a>
-          <a href="#" className="menu__link">
-            Projects
+          </Link>
+          <Link to="/projects" className="menu__link">
+            cool projects
             <svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -46,9 +47,9 @@ const NavBar = () => {
             >
               <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4" />
             </svg>
-          </a>
-          <a href="#" className="menu__link">
-            Contact
+          </Link>
+          <Link to="/about" className="menu__link">
+            contact me
             <svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +59,7 @@ const NavBar = () => {
             >
               <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4" />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </>
