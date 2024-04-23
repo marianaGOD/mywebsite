@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 import "../Styles/ShelfStyles.css";
+import Project1 from "./Project1";
+import Project2 from "./Project2";
+import Project3 from "./Project3";
 
 export default function Shelf() {
   const books = [
-    { id: 1, title: "Book One", content: "Content of Book One..." },
-    { id: 2, title: "Book Two", content: "Content of Book Two..." },
-    { id: 3, title: "Book Three", content: "Content of Book Three..." },
+    { id: 1, title: "JestQuest", component: <Project1 /> },
+    { id: 2, title: "PlotTwist", component: <Project2 /> }, // Update these as needed
+    { id: 3, title: "WanderHer", component: <Project3 /> }, // Update these as needed
   ];
-  const [selectedBook, setSelectedBook] = useState(null);
+
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const handleBookClick = (book) => {
-    // Toggle the display of the book details
-    if (selectedBook && book.id === selectedBook.id) {
-      setSelectedBook(null); // If the same book is clicked again, close the details
-    } else {
-      setSelectedBook(book); // Otherwise, open the clicked book's details
-    }
+    setSelectedProject(book.component);
+  };
+
+  const handleClose = () => {
+    setSelectedProject(null);
   };
 
   return (
@@ -26,13 +29,17 @@ export default function Shelf() {
           className="book"
           onClick={() => handleBookClick(book)}
         >
-          {book.title}
+          <span className="book-title">{book.title}</span>
         </div>
       ))}
-      {selectedBook && (
-        <div className="book-details">
-          <h2>{selectedBook.title}</h2>
-          <p>{selectedBook.content}</p>
+      {selectedProject && (
+        <div className="popup">
+          <div className="popup-content">
+            {selectedProject}
+            <button className="close-button" onClick={handleClose}>
+              ❌
+            </button>
+          </div>
         </div>
       )}
     </div>

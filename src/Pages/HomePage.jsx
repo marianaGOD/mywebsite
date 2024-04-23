@@ -10,9 +10,15 @@ export default function HomePage() {
     <>
       <NavBar />
       <div className="homepage-container">
-        <div className='homepage-title-container'>
+        <div className="homepage-title-container">
           <Shelf />
-          <h1>Welcome to my page!</h1>
+          <div className="homepage-title">
+            <h1>
+              Browse my shelf of digital delights 📚 — each book is a portal to
+              a different universe of code and creativity 🌌. Pick a volume 📘
+              and let's turn the page to innovation! ✨
+            </h1>
+          </div>
         </div>
       </div>
     </>

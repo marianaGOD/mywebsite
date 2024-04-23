@@ -5,40 +5,50 @@
   flex-wrap: wrap;
   background-image: url("../assets/catshelf.gif");
   background-color: #fbe1aa;
-  background-size: contain; /* This will make sure the entire image is shown */
-  background-position: center center; /* Center the background image */
+  background-size: contain; 
+  background-position: center center; 
   background-repeat: no-repeat;
   overflow: auto;
   padding: 20px;
   border-radius: 10px;
-  width: 100%; /* Takes the full width of the parent */
-  height: 60vh; /* Adjust height as needed to prevent cropping */
-  max-width: 1000px; /* Max width can remain, but might not be necessary */
-  position: relative; /* If you're positioning children absolutely */
+  width: 100%; 
+  height: 60vh; 
+  max-width: 1000px; 
+  position: relative; 
   gap: 5px;
   
 }
 
 
 .book {
-  width: 100px;
+  width: 50px;
   height: 150px;
-  background-color: #fab172;
-  margin-top: 30%; /* Adjusted to move the books down */
+  background-color: #55946c;
+  margin-top: 30%;
   text-align: center;
   vertical-align: middle;
-  line-height: 150px;
+  line-height: 150px; /* Adjust if necessary after rotating text */
   cursor: pointer;
   transition: transform 0.3s;
   color: #132725;
-  background-color: #55946c;
+  font-size: x-small;
+  font-style: italic;
   border-radius: 10px;
-  border: 2px solid #132725; /* 2px solid border with the specified color */
+  border: 2px solid #dd3711;
+  display: flex; /* Ensures the span aligns properly within the book */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.book-title {
+  transform: rotate(270deg); /* Rotates the span containing the title */
+  transform-origin: center; /* Ensures the rotation happens around the center */
+  white-space: nowrap; /* Prevents the text from wrapping */
 }
 
 .book:hover {
-  transform: scale(1.1); /* Slightly enlarge book on hover */
-  box-shadow: 0 0 10px #55946c; /* Soft green shadow for depth */
+  transform: scale(1.1); 
+  box-shadow: 0 0 10px #55946c; 
 }
 
 .book-details {
@@ -46,11 +56,47 @@
   top: 20%;
   left: 50%;
   transform: translate(-50%, -20%);
-  background-color: #f6faf0; /* Light background for details, easy on the eyes */
-  color: #132725; /* Dark green for detailed text */
-  padding: 20px;
+  background-color: #f6faf0; 
+  color: #132725; 
   border-radius: 5px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Subtle shadow for a pop-up effect */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
   z-index: 10;
+  
 }
 
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of everything */
+}
+
+.popup-content {
+  border-radius: 10px;
+  position: relative; /* Position relative for the close button */
+  max-width: 90%; /* Limits the content width, ensuring padding from screen edges */
+  max-height: 90%; /* Limits content height */
+  overflow-y: auto; /* Adds scroll for overflow content */
+}
+
+.close-button {
+  position: absolute;
+  top: 5%;
+  right: 28%;
+  background-color: #fbe1aa;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.close-button:hover{
+  background-color: #dd350f; /* Softer orange on hover */
+}

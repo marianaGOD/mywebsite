@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import NavBar from "../Components/NavBar";
-import "../Styles/ProjectsPageStyles.css";
+
 import JestQuestImage from "../assets/JestQuest.jpg";
 import PlotTwistImage from "../assets/PlotTwist.jpg";
 import WanderHerImage from "../assets/WanderHer.jpg";
