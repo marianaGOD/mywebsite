@@ -45,3 +45,15 @@
 }
 
 
+@media (max-width: 768px) {
+  .homepageanimation-pic,
+  .homepageanimation-pic2 {
+    width: 90%; /* Reduce image width for smaller screens */
+  }
+
+  .speechbub1-pic, .speechbub2-pic {
+    max-width: 80%; /* Adjust maximum width for speech bubbles */
+    right: 5%; /* Move speech bubbles closer to the center */
+    top: 15%; /* Adjust vertical position of speech bubbles */
+  }
+}
