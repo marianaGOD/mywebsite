@@ -7,6 +7,8 @@ import HomePageAnimation from "./Pages/HomePageAnimation";
 import AboutMe from "./Pages/AboutMe";
 
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import FunPage from "./Pages/FunPage";
+import ContactMe from "./Pages/ContactMe";
 
 const client = new ApolloClient({
   uri: import.meta.env.VITE_HYGRAPH_CONTENT_API, // Ensure this is correctly configured
@@ -24,6 +26,8 @@ function App() {
           <Route path="/homepage" element={<HomePage />} />
           <Route path="/welcome" element={<HomePageAnimation />} />
           <Route path="/about" element={<AboutMe />} />
+          <Route path="/fun" element={<FunPage />} />
+          <Route path="/contact" element={<ContactMe />} />
         </Routes>
       </Router>
     </ApolloProvider>
