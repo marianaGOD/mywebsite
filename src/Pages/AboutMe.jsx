@@ -4,9 +4,9 @@ import Timeline from "../Components/Timeline"
 import "../Styles/AboutMeStyles.css";
 
 export default function AboutMe() {
-  const [showTimeline, setShowTimeline] = useState(false); // State to manage visibility of the Timeline
+  const [showTimeline, setShowTimeline] = useState(false); 
 
-  // Handler to toggle the Timeline visibility
+ 
   const toggleTimeline = () => {
     setShowTimeline(!showTimeline);
   };
@@ -70,7 +70,6 @@ export default function AboutMe() {
           more
         </button>
         {showTimeline && <Timeline />}{" "}
-        {/* Conditionally render the Timeline component */}
       </div>
     </div>
   );

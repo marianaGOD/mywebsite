@@ -3,7 +3,7 @@
 .menu {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
@@ -19,68 +19,168 @@
 
 .menu-links {
   display: flex;
-  justify-content:flex-end;
-  width: 100%; /* Occupies the remaining space */
+  justify-content: flex-end; /* Align links to the right */
+  align-items: center;
+  height: 100%;
+  width: 100%; /* Occupy half of the navbar width */
 }
 
 .menu__link {
   color: #55946c;
   text-decoration: none;
-  position: relative;
-  padding: 10px 10px;
-  font-size: larger;
+  padding: 10px;
+  font-size: 1rem;
   transition: color 0.3s ease;
   font-weight: 800;
+}
+
+.menu__link--active {
+  border-bottom-color: #dd3711; /* Color for active link */
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-toggle-icon {
+  width: 60px;
+  height: 60px;
+  font-size: 100px;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle-container {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem; 
+  margin-top: -40%;
+}
+
+.menu.open .menu-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu.open .menu-toggle .bar {
+  background-color: #132725;
+}
+
+.menu__link {
+  position: relative; /* Ensure SVG effects align with links */
 }
 
 .menu__link svg {
   fill: none;
   stroke: #dd350f;
-  stroke-width: 2;
+  stroke-width: 1;
   stroke-miterlimit: 10;
   stroke-dasharray: 338;
   stroke-dashoffset: 338;
   stroke-linecap: round;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: calc(100% + 60px);
-  opacity: 0;
-  transform: translate(-50%, -50%);
-  transition: stroke-dashoffset 0s 0.2s, opacity 0.2s;
-  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: stroke-dashoffset 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  z-index: 1; /* Adjusted z-index to bring it above other elements */
 }
 
-.menu__link--active,
-.menu__link:hover {
-  color: #132725;
-  transition: color 0.3s ease;
-}
-
-.menu__link--active svg,
 .menu__link:hover svg {
   stroke-dashoffset: 0;
-  opacity: 1;
-  transition: opacity 0s, stroke-dashoffset 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
+
 .pfpgif-container {
-  display: flex;  /* Use flexbox to center the image */
-  justify-content: center;  /* Center horizontally */
-  align-items: center;  /* Center vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
-  top: 0;
-  left: 50px; /* Position 50px from the left of the viewport */
-  z-index: 1001; /* Ensure it is above the menu links if they overlap */
+  top: 10px;
+  left: 10px; 
+  z-index: 1001; 
   background-color: #f77d47;
-  border-radius: 60px;
-  border: 10px solid transparent; /* Adjusted for border style */
-  height: 400px;
-  width: 400px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  height: 200px; /* Adjusted height */
+  width: 200px; /* Adjusted width */
 }
 
 .pfpgif-img {
-  max-height: 300px; /* Use max-height to ensure it fits in the container */
-  max-width: 100%;  /* Ensure the image does not exceed the container's width */
-  border-radius: 60px;
-  border: 10px solid #dd350f; /* Style for the border */
+  max-height: 200px; /* Adjusted max height */
+  max-width: 100%;
+  border-radius: 50%;
+  border: 5px solid #dd350f;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    padding: 10px;
+    height: auto;
+    flex-direction: column;
+    background-color:#56906c86; /* Add transparency to the menu */
+    backdrop-filter: blur(10px); /* Add blur effect to the background */
+    
+  }
+
+ .menu-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    
+  }
+
+  .menu.open .menu-links {
+    display: flex;
+    
+  }
+
+  .menu__link {
+    font-size: 1rem; /* Decreased font size */
+    padding: 10px; /* Adjusted padding */
+    transition: color 0.3s ease;
+    color: #dd3711; /* Color for font in the dropdown menu */
+    border-bottom: 2px solid transparent; /* Add transparent border initially */
+  }
+
+  .menu__link:hover {
+    color: #dd3711; /* Hover effect */
+  }
+
+  .menu__link--active {
+    border-bottom-color: #dd3711;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+  }
+
+  .menu-toggle-container {
+    margin-right: 20px; /* Adjusted margin */
+  }
+
+  .bar {
+    width: 100%;
+    height: 60px;
+    background-color: #dd3711; /* Color for hamburger menu icon */
+    transition: background-color 0.3s ease;
+  }
+
+  .pfpgif-container {
+    height: 70px;
+    width: 70px;
+  }
+
+  .pfpgif-img {
+    max-height: 70px;
+  }
 }
